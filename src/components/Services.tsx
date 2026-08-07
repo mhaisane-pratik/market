@@ -1,8 +1,9 @@
 import React from 'react';
-import { Award, Layers, Cpu, FileCheck2, ArrowRight, Tag } from 'lucide-react';
+import { Award, Layers, Cpu, FileCheck2, ArrowRight, Tag, Handshake, PhoneCall } from 'lucide-react';
 
 export const Services: React.FC = () => {
-  const whatsappUrl = "https://wa.me/919373372183?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20know%20more%20about%20your%20project%20pricing.";
+  const whatsappUrl = "https://wa.me/919373372183?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20discuss%20project%20pricing%20and%20negotiate.";
+  const phoneUrl = "tel:+919373372183";
 
   const servicesList = [
     {
@@ -45,13 +46,13 @@ export const Services: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-950/80 border border-indigo-800/80 text-indigo-300 text-xs font-bold uppercase tracking-wider">
-            Affordable Services
+            Affordable Packages
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Clear & <span className="text-gradient">Affordable Packages</span>
+            Clear Services & <span className="text-gradient">Negotiable Pricing</span>
           </h2>
           <p className="text-slate-400 text-base">
-            Budget friendly pricing from ₹500 to ₹3,000 depending on project complexity.
+            Budget friendly pricing from ₹500 to ₹3,000 — prices are open for negotiation on call/WhatsApp!
           </p>
         </div>
 
@@ -75,6 +76,12 @@ export const Services: React.FC = () => {
                     </span>
                   </div>
 
+                  <div className="mb-3">
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950 text-amber-300 border border-amber-800">
+                      <Handshake className="h-3 w-3" /> Prices Negotiable
+                    </span>
+                  </div>
+
                   <h3 className="text-xl font-bold text-white mb-2">
                     {service.title}
                   </h3>
@@ -93,15 +100,24 @@ export const Services: React.FC = () => {
                   </ul>
                 </div>
 
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 hover:bg-emerald-600 text-slate-200 hover:text-white border border-slate-800 text-xs font-bold transition-all"
-                >
-                  <span>Inquire on WhatsApp</span>
-                  <ArrowRight className="h-4 w-4" />
-                </a>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md"
+                  >
+                    <span>WhatsApp Negotiate</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                  <a
+                    href={phoneUrl}
+                    className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 text-xs font-semibold transition-all"
+                  >
+                    <PhoneCall className="h-3 w-3 text-indigo-400" />
+                    <span>Call Developer</span>
+                  </a>
+                </div>
               </div>
             );
           })}

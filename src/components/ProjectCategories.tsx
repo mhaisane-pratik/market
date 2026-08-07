@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Sparkles, FolderCheck, Send, Eye } from 'lucide-react';
+import { ExternalLink, Sparkles, FolderCheck, Send, Eye, PhoneCall } from 'lucide-react';
 
 export const ProjectCategories: React.FC = () => {
   const featuredDemos = [
@@ -39,6 +39,7 @@ export const ProjectCategories: React.FC = () => {
   ];
 
   const whatsappBaseUrl = "https://wa.me/919373372183?text=";
+  const phoneUrl = "tel:+919373372183";
 
   return (
     <section id="categories" className="py-24 relative bg-slate-950 overflow-hidden">
@@ -56,7 +57,7 @@ export const ProjectCategories: React.FC = () => {
             Ready-Made Project <span className="text-gradient">Categories</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Explore our pre-built ready-to-deploy projects with instant live preview demos, source code, and full reports.
+            Explore live pre-built projects. Contact us on WhatsApp/Phone to get source code & negotiate prices (₹500 – ₹3,000)!
           </p>
         </div>
 
@@ -136,13 +137,13 @@ export const ProjectCategories: React.FC = () => {
                     <ExternalLink className="h-4 w-4" />
                   </a>
                   <a
-                    href={`${whatsappBaseUrl}Hi%20Student%20Project%20Hub,%20I%20want%20source%20code%20and%20details%20for%20${encodeURIComponent(demo.title)}`}
+                    href={`${whatsappBaseUrl}Hi%20Student%20Project%20Hub,%20I%20want%20source%20code%20and%20price%20details%20for%20${encodeURIComponent(demo.title)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs shadow-lg flex items-center justify-center gap-1.5 transition-all"
                   >
                     <Send className="h-3.5 w-3.5" />
-                    <span>Get Source Code</span>
+                    <span>WhatsApp Negotiate</span>
                   </a>
                 </div>
               </div>
@@ -154,7 +155,7 @@ export const ProjectCategories: React.FC = () => {
         <div className="space-y-6">
           <h3 className="text-xl font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-3">
             <FolderCheck className="h-5 w-5 text-indigo-400" />
-            <span>More Available Ready-Made Project Categories</span>
+            <span>More Ready-Made Project Categories</span>
           </h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -167,22 +168,31 @@ export const ProjectCategories: React.FC = () => {
                   <h4 className="text-sm font-bold text-white">{cat.title}</h4>
                   <p className="text-[11px] text-slate-400 mt-1">{cat.tech}</p>
                 </div>
-                <a
-                  href={`${whatsappBaseUrl}Hi%20Student%20Project%20Hub,%20I%20need%20a%20project%20for%20${encodeURIComponent(cat.title)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-2 px-3 rounded-lg bg-slate-900 hover:bg-emerald-600 text-slate-300 hover:text-white border border-slate-800 text-xs font-semibold transition-all flex items-center justify-center gap-1.5"
-                >
-                  <Send className="h-3 w-3" />
-                  <span>Request Project</span>
-                </a>
+                <div className="flex items-center gap-2 pt-2">
+                  <a
+                    href={`${whatsappBaseUrl}Hi%20Student%20Project%20Hub,%20I%20want%20a%20project%20for%20${encodeURIComponent(cat.title)}.%20Is%20the%20price%20negotiable?`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-700 text-xs font-bold transition-all flex items-center justify-center gap-1.5"
+                  >
+                    <Send className="h-3 w-3" />
+                    <span>WhatsApp</span>
+                  </a>
+                  <a
+                    href={phoneUrl}
+                    className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 text-xs"
+                    title="Call Developer"
+                  >
+                    <PhoneCall className="h-3.5 w-3.5 text-indigo-400" />
+                  </a>
+                </div>
               </div>
             ))}
           </div>
 
           <div className="text-center pt-6">
-            <p className="text-sm text-slate-400 italic">
-              And many more custom topics available on request!
+            <p className="text-xs text-amber-300 font-semibold italic">
+              🤝 All project prices are negotiable (₹500 to ₹3,000)! Contact us directly on WhatsApp or Call (9373372183).
             </p>
           </div>
         </div>

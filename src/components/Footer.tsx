@@ -1,12 +1,13 @@
 import React from 'react';
-import { GraduationCap, Heart, ArrowUp, Send } from 'lucide-react';
+import { GraduationCap, Heart, ArrowUp, Send, PhoneCall } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const whatsappUrl = "https://wa.me/919373372183?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20discuss%20my%20college%20project%20requirement.";
+  const whatsappUrl = "https://wa.me/919373372183?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20discuss%20my%20college%20project%20and%20negotiate%20the%20price.";
+  const phoneUrl = "tel:+919373372183";
 
   return (
     <footer className="bg-slate-950 border-t border-slate-800 text-slate-400 py-16 relative">
@@ -26,17 +27,24 @@ export const Footer: React.FC = () => {
               Your Project • Your Requirements • Our Development Expertise 🚀
             </p>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-              Helping diploma, BCA, MCA, B.Tech & BE students build quality academic projects with complete source code, reports, PPT decks, and live support.
+              Helping diploma, BCA, MCA, B.Tech & BE students build quality academic projects. Budget friendly (₹500 to ₹3,000) & prices 100% negotiable!
             </p>
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"
               >
                 <Send className="h-3.5 w-3.5" />
-                <span>WhatsApp Helpline: 9373372183</span>
+                <span>WhatsApp: 9373372183</span>
+              </a>
+              <a
+                href={phoneUrl}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300"
+              >
+                <PhoneCall className="h-3.5 w-3.5" />
+                <span>Call: 9373372183</span>
               </a>
             </div>
           </div>
@@ -53,13 +61,18 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
+                <a href="#categories" className="hover:text-indigo-400 transition-colors">
+                  Ready-Made Projects & Demos
+                </a>
+              </li>
+              <li>
                 <a href="#why-choose-us" className="hover:text-indigo-400 transition-colors">
                   Why Choose Us
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-indigo-400 transition-colors">
-                  Services Offered
+                  Packages & Pricing
                 </a>
               </li>
               <li>
@@ -68,18 +81,8 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#categories" className="hover:text-indigo-400 transition-colors">
-                  Ready-Made Projects & Live Demos
-                </a>
-              </li>
-              <li>
                 <a href="#how-it-works" className="hover:text-indigo-400 transition-colors">
                   How It Works
-                </a>
-              </li>
-              <li>
-                <a href="#submit-project" className="hover:text-indigo-400 transition-colors">
-                  Submit Project Requirement
                 </a>
               </li>
               <li>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, MessageSquare, Send, CheckCircle2, Copy, Sparkles, Tag } from 'lucide-react';
+import { Phone, MessageSquare, Send, CheckCircle2, Copy, Tag, Handshake, PhoneCall } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   const [copiedText, setCopiedText] = useState<string | null>(null);
 
   const whatsappNumber = "9373372183";
-  const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20discuss%20my%20college%20project%20requirement.`;
+  const whatsappUrl = `https://wa.me/91${whatsappNumber}?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20discuss%20my%20college%20project%20and%20negotiate%20the%20price.`;
+  const phoneUrl = `tel:+91${whatsappNumber}`;
 
   const copyToClipboard = (text: string, label: string) => {
     navigator.clipboard.writeText(text);
@@ -23,19 +24,19 @@ export const Contact: React.FC = () => {
       color: 'from-emerald-600 to-teal-600',
     },
     {
-      title: 'Affordable Pricing',
-      value: '₹500 – ₹3,000',
-      icon: Tag,
-      actionText: 'View Pricing',
-      href: '#services',
-      color: 'from-indigo-600 to-purple-600',
+      title: 'Direct Phone Call',
+      value: '+91 9373372183',
+      icon: PhoneCall,
+      actionText: 'Call Now',
+      href: phoneUrl,
+      color: 'from-blue-600 to-indigo-600',
     },
     {
-      title: 'Location',
-      value: 'Pune, Maharashtra',
-      icon: MapPin,
-      actionText: 'Serving Students',
-      href: '#',
+      title: 'Negotiable Pricing',
+      value: '₹500 – ₹3,000',
+      icon: Tag,
+      actionText: 'Prices Open to Discussion',
+      href: whatsappUrl,
       color: 'from-purple-600 to-pink-600',
     },
   ];
@@ -47,13 +48,13 @@ export const Contact: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/80 text-emerald-300 text-xs font-bold uppercase tracking-wider">
             <Phone className="h-3.5 w-3.5" />
-            Contact Us
+            Contact Developer
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Need a <span className="text-gradient">Project?</span>
+            Direct Contact & <span className="text-gradient">Negotiable Pricing</span>
           </h2>
           <p className="text-slate-300 text-base">
-            Discuss your college project requirements with us on WhatsApp.
+            No complex forms! Reach out directly via WhatsApp or Call. Prices are 100% negotiable!
           </p>
         </div>
 
@@ -110,24 +111,31 @@ export const Contact: React.FC = () => {
 
         {/* Callout Banner */}
         <div className="mt-10 glass-panel p-6 sm:p-8 rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-slate-900 via-emerald-950/50 to-slate-900 text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-900/60 text-emerald-300 rounded-full text-xs font-bold">
-            <Sparkles className="h-3.5 w-3.5" /> Direct Assistance
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-950 text-amber-300 border border-amber-800 rounded-full text-xs font-extrabold">
+            <Handshake className="h-3.5 w-3.5" /> 100% Price Negotiation Friendly
           </div>
           <h3 className="text-2xl font-extrabold text-white">
             Projects from ₹500 to ₹3,000 🚀
           </h3>
           <p className="text-xs text-slate-300 max-w-md mx-auto">
-            Click below to chat on WhatsApp instantly and get a free project consultation.
+            Discuss your project requirement & budget directly. We match your college deadline and financial requirement!
           </p>
-          <div className="pt-1 flex justify-center">
+          <div className="pt-1 flex flex-col sm:flex-row justify-center gap-3">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm shadow-xl hover:shadow-emerald-500/50 transition-all flex items-center gap-2"
+              className="px-7 py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm shadow-xl transition-all flex items-center justify-center gap-2"
             >
               <Send className="h-4 w-4" />
-              <span>Discuss on WhatsApp ({whatsappNumber})</span>
+              <span>WhatsApp Us (9373372183)</span>
+            </a>
+            <a
+              href={phoneUrl}
+              className="px-7 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 font-extrabold text-sm transition-all flex items-center justify-center gap-2"
+            >
+              <PhoneCall className="h-4 w-4 text-indigo-400" />
+              <span>Call Us (9373372183)</span>
             </a>
           </div>
         </div>

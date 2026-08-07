@@ -5,7 +5,6 @@ import { WhyChooseUs } from './components/WhyChooseUs';
 import { Services } from './components/Services';
 import { Technologies } from './components/Technologies';
 import { HowItWorks } from './components/HowItWorks';
-import { ProjectForm } from './components/ProjectForm';
 import { Faq } from './components/Faq';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -17,13 +16,12 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        {/* Live Project Demos Section moved to the top right below Hero */}
+        {/* Featured Live Project Demos */}
         <ProjectCategories />
         <WhyChooseUs />
         <Services />
         <Technologies />
         <HowItWorks />
-        <ProjectForm />
         <Faq />
         <Contact />
       </main>

@@ -1,16 +1,17 @@
 import React from 'react';
-import { CheckCircle2, Send, Code2, Star, Sparkles, Tag } from 'lucide-react';
+import { CheckCircle2, Send, PhoneCall, Code2, Star, Sparkles, Tag, Handshake } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const highlights = [
     'Projects from ₹500 to ₹3,000',
-    'Full Source Code Included',
-    'Complete Report & PPT',
-    'Deployment & Setup Support',
+    'Prices are 100% Negotiable',
+    'Full Source Code & Database',
+    'Complete Report, PPT & Setup',
   ];
 
   const targetCourses = ['Diploma', 'BCA', 'MCA', 'B.Tech', 'BE'];
-  const whatsappUrl = "https://wa.me/919373372183?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20discuss%20my%20college%20project%20requirement.";
+  const whatsappUrl = "https://wa.me/919373372183?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20discuss%20my%20college%20project.%20Is%20the%20price%20negotiable?";
+  const phoneUrl = "tel:+919373372183";
 
   return (
     <section id="home" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
@@ -22,10 +23,16 @@ export const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           {/* Left Column */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            {/* Price Highlight Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-700/80 text-emerald-300 text-xs font-bold uppercase tracking-wider shadow-lg">
-              <Tag className="h-4 w-4 text-emerald-400" />
-              <span>Affordable Pricing: ₹500 – ₹3,000 Only</span>
+            {/* Price Highlight & Negotiable Badge */}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-700/80 text-emerald-300 text-xs font-bold uppercase tracking-wider shadow-lg">
+                <Tag className="h-4 w-4 text-emerald-400" />
+                <span>₹500 – ₹3,000 Budget Plans</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-950/90 border border-amber-700/80 text-amber-300 text-xs font-extrabold uppercase tracking-wider shadow-lg animate-pulse">
+                <Handshake className="h-4 w-4 text-amber-400" />
+                <span>Prices Negotiable 🤝</span>
+              </div>
             </div>
 
             {/* Title */}
@@ -40,11 +47,11 @@ export const Hero: React.FC = () => {
                 Turn Your Project Idea into Reality 🚀
               </p>
               <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed">
-                Custom & ready-made projects for Diploma, BCA, MCA, B.Tech & BE students. Everything delivered with source code, report & PPT.
+                Need a project for Diploma, BCA, MCA, B.Tech or BE? Contact us directly via WhatsApp or Phone Call. Prices are fully negotiable according to your budget!
               </p>
             </div>
 
-            {/* Simple Perks List */}
+            {/* Perks List */}
             <div className="grid sm:grid-cols-2 gap-3 pt-2">
               {highlights.map((item) => (
                 <div key={item} className="flex items-center gap-2.5 bg-slate-900/60 p-3 rounded-xl border border-slate-800 backdrop-blur-sm">
@@ -54,7 +61,7 @@ export const Hero: React.FC = () => {
               ))}
             </div>
 
-            {/* Action Buttons */}
+            {/* Direct Contact Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-3">
               <a
                 href={whatsappUrl}
@@ -63,13 +70,14 @@ export const Hero: React.FC = () => {
                 className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl text-base font-extrabold text-white bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-600 hover:from-emerald-500 hover:to-teal-400 shadow-xl shadow-emerald-600/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5 transition-all"
               >
                 <Send className="h-5 w-5" />
-                <span>Chat on WhatsApp (9373372183)</span>
+                <span>WhatsApp (9373372183)</span>
               </a>
               <a
-                href="#categories"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl text-base font-bold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:text-white transition-all"
+                href={phoneUrl}
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl text-base font-extrabold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:text-white transition-all"
               >
-                <span>View Ready Demos</span>
+                <PhoneCall className="h-5 w-5 text-indigo-400" />
+                <span>Call Now (9373372183)</span>
               </a>
             </div>
 
@@ -98,33 +106,34 @@ export const Hero: React.FC = () => {
                     <div className="h-3 w-3 rounded-full bg-rose-500/80" />
                     <div className="h-3 w-3 rounded-full bg-amber-500/80" />
                     <div className="h-3 w-3 rounded-full bg-emerald-500/80" />
-                    <span className="ml-2 text-xs font-mono text-slate-400">pricing_table.json</span>
+                    <span className="ml-2 text-xs font-mono text-slate-400">direct_contact.json</span>
                   </div>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-400 border border-emerald-800 font-bold">
-                    BEST PRICE
+                  <span className="px-2.5 py-0.5 rounded text-[10px] font-mono bg-amber-950 text-amber-300 border border-amber-800 font-bold">
+                    NEGOTIABLE PRICING
                   </span>
                 </div>
 
                 <div className="bg-slate-950/90 p-5 rounded-xl border border-slate-800 space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-400 uppercase font-semibold">Project Budget Range</span>
+                    <span className="text-xs text-slate-400 uppercase font-semibold">Project Price Range</span>
                     <span className="text-xs font-mono text-emerald-400 font-bold">₹500 – ₹3,000</span>
                   </div>
-                  <div className="text-3xl font-extrabold text-white">
+                  <div className="text-3xl font-extrabold text-white flex items-center gap-2">
                     ₹500 <span className="text-sm font-normal text-slate-400">to</span> ₹3,000
                   </div>
-                  <p className="text-xs text-slate-400">
-                    Pricing depends on project scope, technology & deadline.
-                  </p>
+                  <div className="p-2 bg-amber-950/50 border border-amber-800/60 rounded-lg text-[11px] font-bold text-amber-300 flex items-center gap-1.5">
+                    <Handshake className="h-4 w-4 shrink-0 text-amber-400" />
+                    <span>Prices are open for discussion & negotiable!</span>
+                  </div>
                 </div>
 
                 <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 p-4 rounded-xl border border-indigo-500/30 text-center space-y-1">
                   <p className="text-xs font-bold text-indigo-300">
-                    Your Project • Your Requirements • Our Expertise 🚀
+                    Direct Call / WhatsApp Helpline:
                   </p>
-                  <p className="text-[11px] text-slate-400">
-                    Direct WhatsApp: <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-bold hover:underline">9373372183</a>
-                  </p>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-lg font-extrabold text-emerald-400 hover:underline block">
+                    📞 9373372183
+                  </a>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 pt-1">
@@ -137,7 +146,7 @@ export const Hero: React.FC = () => {
                   <div className="bg-slate-900/80 p-3 rounded-xl border border-slate-800/80 text-center">
                     <Star className="h-4 w-4 text-amber-400 fill-amber-400 mx-auto mb-1" />
                     <p className="text-base font-extrabold text-white">4.9 ★</p>
-                    <p className="text-[10px] text-slate-400">Top Rated</p>
+                    <p className="text-[10px] text-slate-400">Student Rated</p>
                   </div>
                 </div>
               </div>

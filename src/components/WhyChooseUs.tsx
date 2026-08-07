@@ -1,11 +1,17 @@
 import React from 'react';
-import { Code, DollarSign, Zap, Headset, FileText, MessageSquare, Sparkles } from 'lucide-react';
+import { Code, DollarSign, Zap, FileText, MessageSquare, Sparkles, Handshake } from 'lucide-react';
 
 export const WhyChooseUs: React.FC = () => {
   const chooseUsItems = [
     {
-      title: 'Pocket Friendly Pricing',
-      description: 'Budget plans from ₹500 to ₹3,000 with complete source code & docs.',
+      title: 'Negotiable Student Pricing',
+      description: 'Budget plans from ₹500 to ₹3,000 — open for price negotiation!',
+      icon: Handshake,
+      color: 'from-amber-500 to-orange-600',
+    },
+    {
+      title: 'Pocket Friendly Rates',
+      description: 'Affordable academic assistance with complete source code & docs.',
       icon: DollarSign,
       color: 'from-emerald-500 to-teal-600',
     },
@@ -28,14 +34,8 @@ export const WhyChooseUs: React.FC = () => {
       color: 'from-rose-500 to-pink-600',
     },
     {
-      title: 'Free Setup Assistance',
-      description: '1-on-1 AnyDesk remote setup support to run the project on your laptop.',
-      icon: Headset,
-      color: 'from-cyan-500 to-blue-600',
-    },
-    {
-      title: 'Direct WhatsApp Support',
-      description: 'Instant consultation on WhatsApp (9373372183) for all your questions.',
+      title: 'Direct Call / WhatsApp',
+      description: 'Direct contact with developers on 9373372183 — no middleman!',
       icon: MessageSquare,
       color: 'from-emerald-500 to-teal-500',
     },
@@ -54,7 +54,7 @@ export const WhyChooseUs: React.FC = () => {
             Built for <span className="text-gradient">Student Success</span>
           </h2>
           <p className="text-slate-400 text-base">
-            Simple, honest, student-first project assistance with full support.
+            Simple, honest, student-first project assistance with negotiable pricing.
           </p>
         </div>
 

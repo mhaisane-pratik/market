@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GraduationCap, Menu, X, MessageSquare } from 'lucide-react';
+import { GraduationCap, Menu, X, MessageSquare, PhoneCall } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,11 +24,12 @@ export const Navbar: React.FC = () => {
     { name: 'Services & Pricing', href: '#services' },
     { name: 'Technologies', href: '#technologies' },
     { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Submit Project', href: '#submit-project' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'FAQ', href: '#faq' },
+    { name: 'Contact Us', href: '#contact' },
   ];
 
-  const whatsappUrl = "https://wa.me/919373372183?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20discuss%20my%20college%20project%20requirement.";
+  const whatsappUrl = "https://wa.me/919373372183?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20discuss%20my%20college%20project%20and%20negotiate%20the%20price.";
+  const phoneUrl = "tel:+919373372183";
 
   return (
     <header
@@ -50,7 +51,7 @@ export const Navbar: React.FC = () => {
                 Student Project <span className="text-gradient">Hub</span>
               </span>
               <span className="block text-[10px] text-slate-400 font-medium -mt-1 tracking-wider uppercase">
-                Academic Development Solutions
+                Direct Developer Contact
               </span>
             </div>
           </a>
@@ -72,16 +73,23 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* WhatsApp Button */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* WhatsApp & Call Buttons */}
+          <div className="hidden sm:flex items-center gap-2">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-extrabold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/25 hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-extrabold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/25 transition-all"
             >
               <MessageSquare className="h-3.5 w-3.5" />
-              <span>WhatsApp: 9373372183</span>
+              <span>WhatsApp</span>
+            </a>
+            <a
+              href={phoneUrl}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-extrabold text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg transition-all"
+            >
+              <PhoneCall className="h-3.5 w-3.5" />
+              <span>Call 9373372183</span>
             </a>
           </div>
 
@@ -111,16 +119,24 @@ export const Navbar: React.FC = () => {
               </a>
             ))}
           </nav>
-          <div className="pt-2">
+          <div className="pt-2 flex flex-col gap-2">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-extrabold text-white bg-emerald-600 shadow-lg shadow-emerald-600/30"
+              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-extrabold text-white bg-emerald-600 shadow-lg"
             >
               <MessageSquare className="h-4 w-4" />
               <span>Chat on WhatsApp (9373372183)</span>
+            </a>
+            <a
+              href={phoneUrl}
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-extrabold text-white bg-indigo-600"
+            >
+              <PhoneCall className="h-4 w-4" />
+              <span>Call Developer (9373372183)</span>
             </a>
           </div>
         </div>

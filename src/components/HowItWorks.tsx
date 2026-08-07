@@ -1,35 +1,36 @@
 import React from 'react';
-import { FormInput, Code2, PackageCheck, ArrowRight, Sparkles } from 'lucide-react';
+import { PhoneCall, Code2, PackageCheck, ArrowRight, Sparkles, MessageSquare } from 'lucide-react';
 
 export const HowItWorks: React.FC = () => {
+  const whatsappUrl = "https://wa.me/919373372183?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20discuss%20my%20college%20project%20and%20negotiate%20the%20price.";
+  const phoneUrl = "tel:+919373372183";
+
   const steps = [
     {
       number: '01',
-      title: '1. Share Your Requirements',
-      subtitle: 'Tell us your project topic, technology stack, or college guidelines.',
-      desc: 'Submit your requirements via our form or WhatsApp (9373372183) including your preferred technology, deadline, and college format.',
-      icon: FormInput,
-      color: 'from-blue-600 to-indigo-600',
+      title: '1. WhatsApp or Call Us',
+      subtitle: 'Share your project topic, guidelines & budget on WhatsApp or Phone Call (9373372183).',
+      desc: 'Discuss your requirements directly with our developer. Prices are negotiable based on your budget!',
+      icon: MessageSquare,
+      color: 'from-emerald-600 to-teal-600',
     },
     {
       number: '02',
-      title: '2. We Build Your Project',
-      subtitle: 'Our team develops your project with clean code, proper documentation, and modern UI.',
-      desc: 'Our experienced developers build your application following high industry standards, formatted report guidelines, and PPT presentation slides.',
+      title: '2. We Develop Your Project',
+      subtitle: 'Clean code, IEEE format report & PPT prepared for your college submission.',
+      desc: 'Our experienced developers build your application according to your college requirements.',
       icon: Code2,
       color: 'from-purple-600 to-indigo-600',
     },
     {
       number: '03',
-      title: '3. Get Complete Delivery',
-      subtitle: 'Receive the source code, report, PPT, database, and a full project explanation.',
-      desc: 'Get full unlocked source code, database script, SRS report, presentation slides, and live AnyDesk setup support with viva explanation.',
+      title: '3. Complete Delivery & Setup',
+      subtitle: 'Receive full source code, report, PPT deck & live AnyDesk installation support.',
+      desc: 'Get full unlocked code, database, report, slides & viva explanation support.',
       icon: PackageCheck,
-      color: 'from-emerald-600 to-teal-600',
+      color: 'from-blue-600 to-cyan-600',
     },
   ];
-
-  const whatsappUrl = "https://wa.me/919373372183?text=Hi%20Student%20Project%20Hub,%20I%20want%20to%20share%20my%20project%20requirements.";
 
   return (
     <section id="how-it-works" className="py-24 relative overflow-hidden">
@@ -44,11 +45,11 @@ export const HowItWorks: React.FC = () => {
             How It <span className="text-gradient">Works</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            3 simple steps to bring your college project idea to life.
+            3 simple steps — no complicated forms required. Contact us directly!
           </p>
         </div>
 
-        {/* 3 Stepper Grid */}
+        {/* Stepper Grid */}
         <div className="grid md:grid-cols-3 gap-8 relative">
           {steps.map((step, index) => {
             const Icon = step.icon;
@@ -76,15 +77,22 @@ export const HowItWorks: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-slate-800/60">
+                  <div className="pt-6 mt-6 border-t border-slate-800/60 flex items-center gap-3">
                     <a
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"
                     >
-                      <span>Start Step {index + 1} on WhatsApp</span>
+                      <span>WhatsApp Chat</span>
                       <ArrowRight className="h-3.5 w-3.5" />
+                    </a>
+                    <a
+                      href={phoneUrl}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300"
+                    >
+                      <PhoneCall className="h-3.5 w-3.5" />
+                      <span>Call Now</span>
                     </a>
                   </div>
                 </div>
