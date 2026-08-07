@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Send, PhoneCall, Code2, Star, Sparkles, Tag, Handshake } from 'lucide-react';
+import { CheckCircle2, Send, PhoneCall, Sparkles, Tag, Handshake } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const highlights = [
@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
                 Turn Your Project Idea into Reality 🚀
               </p>
               <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed">
-                Need a project for Diploma, BCA, MCA, B.Tech or BE? Contact us directly via WhatsApp or Phone Call. Prices are fully negotiable according to your budget!
+                Custom & ready-made projects for Diploma, BCA, MCA, B.Tech & BE students. Everything delivered with source code, report & PPT.
               </p>
             </div>
 
@@ -62,21 +62,21 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Direct Contact Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-3">
+            <div className="flex flex-col sm:flex-row gap-3 pt-3">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl text-base font-extrabold text-white bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-600 hover:from-emerald-500 hover:to-teal-400 shadow-xl shadow-emerald-600/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-sm font-extrabold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/25 transition-all"
               >
-                <Send className="h-5 w-5" />
+                <Send className="h-4 w-4" />
                 <span>WhatsApp (9373372183)</span>
               </a>
               <a
                 href={phoneUrl}
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl text-base font-extrabold text-slate-200 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:text-white transition-all"
+                className="inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-sm font-extrabold text-slate-200 bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg transition-all"
               >
-                <PhoneCall className="h-5 w-5 text-indigo-400" />
+                <PhoneCall className="h-4 w-4 text-white" />
                 <span>Call Now (9373372183)</span>
               </a>
             </div>
@@ -95,59 +95,53 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column */}
+          {/* Right Column: High Tech Modern Graphic Image */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-indigo-500 to-purple-600 opacity-30 blur-xl"></div>
+              {/* Outer Glow */}
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500 opacity-40 blur-xl"></div>
 
-              <div className="relative glass-panel rounded-2xl p-6 shadow-2xl border border-slate-800 space-y-5">
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div className="relative glass-panel rounded-3xl p-3 border border-slate-800 shadow-2xl overflow-hidden group">
+                <div className="relative rounded-2xl overflow-hidden aspect-square bg-slate-900">
+                  <img
+                    src="/hero_graphic.jpg"
+                    alt="Student College Project Development Illustration"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+
+                  {/* Floating Price Badge Overlay */}
+                  <div className="absolute top-4 left-4 bg-slate-950/85 backdrop-blur-md border border-emerald-500/50 p-3 rounded-2xl shadow-xl flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-bold">
+                      <Tag className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider block">Special Rate</span>
+                      <span className="text-sm font-extrabold text-emerald-400">₹500 – ₹3,000</span>
+                    </div>
+                  </div>
+
+                  {/* Floating Negotiable Pill Overlay */}
+                  <div className="absolute bottom-4 right-4 bg-slate-950/90 backdrop-blur-md border border-amber-500/60 px-4 py-2 rounded-xl shadow-xl flex items-center gap-2 text-xs font-extrabold text-amber-300">
+                    <Handshake className="h-4 w-4 text-amber-400 animate-pulse" />
+                    <span>Prices Negotiable 🤝</span>
+                  </div>
+                </div>
+
+                {/* Bottom Direct Helpline Trigger */}
+                <div className="pt-3 pb-1 px-3 flex items-center justify-between text-xs font-semibold text-slate-300">
                   <div className="flex items-center gap-2">
-                    <div className="h-3 w-3 rounded-full bg-rose-500/80" />
-                    <div className="h-3 w-3 rounded-full bg-amber-500/80" />
-                    <div className="h-3 w-3 rounded-full bg-emerald-500/80" />
-                    <span className="ml-2 text-xs font-mono text-slate-400">direct_contact.json</span>
+                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
+                    <span>WhatsApp / Call Helpline:</span>
                   </div>
-                  <span className="px-2.5 py-0.5 rounded text-[10px] font-mono bg-amber-950 text-amber-300 border border-amber-800 font-bold">
-                    NEGOTIABLE PRICING
-                  </span>
-                </div>
-
-                <div className="bg-slate-950/90 p-5 rounded-xl border border-slate-800 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-slate-400 uppercase font-semibold">Project Price Range</span>
-                    <span className="text-xs font-mono text-emerald-400 font-bold">₹500 – ₹3,000</span>
-                  </div>
-                  <div className="text-3xl font-extrabold text-white flex items-center gap-2">
-                    ₹500 <span className="text-sm font-normal text-slate-400">to</span> ₹3,000
-                  </div>
-                  <div className="p-2 bg-amber-950/50 border border-amber-800/60 rounded-lg text-[11px] font-bold text-amber-300 flex items-center gap-1.5">
-                    <Handshake className="h-4 w-4 shrink-0 text-amber-400" />
-                    <span>Prices are open for discussion & negotiable!</span>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 p-4 rounded-xl border border-indigo-500/30 text-center space-y-1">
-                  <p className="text-xs font-bold text-indigo-300">
-                    Direct Call / WhatsApp Helpline:
-                  </p>
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-lg font-extrabold text-emerald-400 hover:underline block">
-                    📞 9373372183
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono font-extrabold text-emerald-400 hover:underline flex items-center gap-1"
+                  >
+                    <span>9373372183</span>
+                    <PhoneCall className="h-3 w-3" />
                   </a>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 pt-1">
-                  <div className="bg-slate-900/80 p-3 rounded-xl border border-slate-800/80 text-center">
-                    <Code2 className="h-4 w-4 text-indigo-400 mx-auto mb-1" />
-                    <p className="text-base font-extrabold text-white">100%</p>
-                    <p className="text-[10px] text-slate-400">Custom Code</p>
-                  </div>
-
-                  <div className="bg-slate-900/80 p-3 rounded-xl border border-slate-800/80 text-center">
-                    <Star className="h-4 w-4 text-amber-400 fill-amber-400 mx-auto mb-1" />
-                    <p className="text-base font-extrabold text-white">4.9 ★</p>
-                    <p className="text-[10px] text-slate-400">Student Rated</p>
-                  </div>
                 </div>
               </div>
             </div>
