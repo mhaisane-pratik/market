@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Sparkles, FolderCheck, Send, PhoneCall } from 'lucide-react';
+import { ExternalLink, Sparkles, FolderCheck, Send, PhoneCall, PlusCircle, Handshake } from 'lucide-react';
 
 export const ProjectCategories: React.FC = () => {
   const featuredDemos = [
@@ -22,6 +22,7 @@ export const ProjectCategories: React.FC = () => {
   ];
 
   const categories = [
+    { title: 'Your Custom Project Topic', tech: 'Any Tech Stack / College Synopsis', isCustom: true },
     { title: 'E-Commerce Website', tech: 'React / MERN Stack' },
     { title: 'Hospital Management System', tech: 'Java Spring Boot / Python' },
     { title: 'Student Management System', tech: 'PHP MySQL / Java' },
@@ -48,16 +49,16 @@ export const ProjectCategories: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto space-y-2 mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/80 border border-purple-800/80 text-purple-300 text-xs font-semibold uppercase tracking-wider">
+        <div className="text-center max-w-3xl mx-auto space-y-2.5 mb-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-950/80 border border-purple-800/80 text-purple-300 text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="h-3.5 w-3.5 text-amber-400" />
-            Ready-Made Projects
+            Ready-Made & Custom Projects
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Featured <span className="text-gradient">Live Project Demos</span>
+            Featured <span className="text-gradient">Live Demos & Project Categories</span>
           </h2>
-          <p className="text-slate-400 text-xs sm:text-sm">
-            Tap to preview live working projects. WhatsApp or Call us to get source code & negotiate prices (₹500 – ₹3,000)!
+          <p className="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
+            Explore ready-made project demos or tell us your specific college project topic — we build 100% custom projects according to your requirements whenever you need! (₹500 – ₹3,000 Negotiable)
           </p>
         </div>
 
@@ -143,41 +144,75 @@ export const ProjectCategories: React.FC = () => {
 
         {/* Other Categories Grid */}
         <div className="space-y-4">
-          <h3 className="text-lg font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-2">
-            <FolderCheck className="h-5 w-5 text-indigo-400" />
-            <span>More Project Categories</span>
-          </h3>
+          <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+            <h3 className="text-lg font-bold text-white flex items-center gap-2">
+              <FolderCheck className="h-5 w-5 text-indigo-400" />
+              <span>Project Categories & Custom Topics</span>
+            </h3>
+            <span className="text-xs text-amber-300 font-bold hidden sm:inline-flex items-center gap-1">
+              <Handshake className="h-3.5 w-3.5" /> Prices Negotiable (₹500 - ₹3,000)
+            </span>
+          </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
             {categories.map((cat, i) => (
               <div
                 key={i}
-                className="glass-panel p-4 rounded-xl border border-slate-800/80 hover:border-indigo-500/50 glow-card flex flex-col justify-between space-y-2"
+                className={`glass-panel p-4 rounded-xl border transition-all glow-card flex flex-col justify-between space-y-2 ${
+                  cat.isCustom
+                    ? 'border-emerald-500/80 bg-gradient-to-br from-slate-900 via-emerald-950/40 to-slate-900 ring-1 ring-emerald-500/30'
+                    : 'border-slate-800/80 hover:border-indigo-500/50'
+                }`}
               >
                 <div>
-                  <h4 className="text-xs font-bold text-white">{cat.title}</h4>
+                  <div className="flex items-center justify-between">
+                    <h4 className={`text-xs font-extrabold ${cat.isCustom ? 'text-emerald-300' : 'text-white'}`}>
+                      {cat.title}
+                    </h4>
+                    {cat.isCustom && (
+                      <span className="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-emerald-900 text-emerald-200 uppercase border border-emerald-700">
+                        Custom
+                      </span>
+                    )}
+                  </div>
                   <p className="text-[10px] text-slate-400 mt-0.5">{cat.tech}</p>
+                  {cat.isCustom && (
+                    <p className="text-[10px] text-slate-300 mt-1 font-medium leading-tight">
+                      Share your college topic & guidelines — we build it custom for you!
+                    </p>
+                  )}
                 </div>
+
                 <div className="flex items-center gap-1.5 pt-1">
                   <a
-                    href={`${whatsappBaseUrl}Hi%20Student%20Project%20Hub,%20I%20want%20a%20project%20for%20${encodeURIComponent(cat.title)}`}
+                    href={`${whatsappBaseUrl}Hi%20Student%20Project%20Hub,%20I%20have%20a%20custom%20project%20topic/requirement:%20${encodeURIComponent(cat.title)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-1.5 px-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold transition-all flex items-center justify-center gap-1"
+                    className={`flex-1 py-1.5 px-2 rounded-lg text-white text-[11px] font-bold transition-all flex items-center justify-center gap-1 ${
+                      cat.isCustom
+                        ? 'bg-emerald-500 hover:bg-emerald-400 text-slate-950'
+                        : 'bg-emerald-600 hover:bg-emerald-500'
+                    }`}
                   >
-                    <Send className="h-3 w-3" />
-                    <span>WhatsApp</span>
+                    {cat.isCustom ? <PlusCircle className="h-3 w-3" /> : <Send className="h-3 w-3" />}
+                    <span>{cat.isCustom ? 'WhatsApp Custom' : 'WhatsApp'}</span>
                   </a>
                   <a
                     href={phoneUrl}
                     className="p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 text-[11px]"
-                    title="Call"
+                    title="Call Developer"
                   >
                     <PhoneCall className="h-3 w-3 text-indigo-400" />
                   </a>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="text-center pt-4">
+            <p className="text-xs text-amber-300 font-semibold italic">
+              🤝 Have a custom college topic or synopsis? We build projects according to your exact requirements whenever you need! (WhatsApp / Call: 9373372183)
+            </p>
           </div>
         </div>
       </div>
